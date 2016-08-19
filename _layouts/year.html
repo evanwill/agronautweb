@@ -1,12 +1,26 @@
 ---
 layout: default
 ---
-<div class="page">
-    {% assign year = page.title %}
+
+{% assign year = page.title %}
+{% if year == 1898 %}
+    {% assign prev = '../years.html' %}
+{% else %}
     {% assign prevyear = year | minus:1 %}
+    {% assign prev = 'argonaut' | append: prevyear | append: '.html' %}
+{% endif %}
+{% if year == 2010 %}
+    {% assign next = '../years.html' %}
+{% else %}
     {% assign nextyear = year | plus:1 %}
+    {% assign next = 'argonaut' | append: nextyear | append: '.html' %}
+{% endif %}
+
+<div class="page">
+
     <div class="pageheader">
-        <h3 class="subpagetitle"><a class="arrow" href="argonaut{{prevyear}}.html">«</a> {{year}} <a href="argonaut{{nextyear}}.html">»</a></h3>
+        <h3 class="subpagetitle"><a class="arrow" href="{{prev}}">«</a> {{year}} <a href="{{next}}">»</a></h3>
+        <!--<h3 class="subpagetitle"><a class="arrow" href="argonaut{{prevyear}}.html">«</a> {{year}} <a href="argonaut{{nextyear}}.html">»</a></h3>-->
     </div>
         <!-- 
             urls should be years/argonaut{{ year }}.html

@@ -11,9 +11,9 @@ title: Argonaut Digital Collection
 description: > 
   A digital collection of UIdaho student newspaper, the Argonaut, 1989 to 2010.
 # baseurl: "/digital/argonaut" # the subpath of your site, e.g. /blog
-baseurl: "/argonautproject"
+baseurl: "/argonautweb"
 # url: "http://www.lib.uidaho.edu" # the base hostname & protocol for your site
-url: "http://evanwill.github.io"
+url: "https://evanwill.github.io"
 
 # Build settings
 markdown: kramdown
