@@ -1,0 +1,29 @@
+---
+layout: default
+title: Browse Years
+---
+<div class="page">
+    
+    <div class="pageheader">
+        <h3 class="subpagetitle"><a class="arrow" href="about.html">«</a> Browse Years <a href="years/argonaut1898.html">»</a></h3>
+    </div>
+        
+    <div class="columnwrapper">
+
+        <ul class="yearslist">
+            {% for year in site.data.argoyears %}
+            
+            <li>
+                <a href="years/argonaut{{ year.date }}.html">
+                <img src="{{ year.img }}" alt="Argonaut {{ year.date }}">
+                <p>{{ year.date }}</p>
+                </a>
+            </li>
+            
+            {% endfor %}
+            
+        </ul>
+
+    </div>
+
+</div>

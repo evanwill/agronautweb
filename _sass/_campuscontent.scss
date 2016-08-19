@@ -1,0 +1,74 @@
+.contentwrapper {
+    margin:0 auto;
+    padding: 5px $content-padding-sm 20px;
+}
+.page {
+    padding:6px;
+    background-color:$white-back; 
+    border-radius: 5px;
+    box-shadow: $shadow-lg;
+    p { font-family: $content-font;}
+}
+.pageheader {
+    padding: 10px 15px 5px;
+}
+.columnwrapper {
+    width: 98%;
+    margin: 5px auto;
+    padding:0;
+    //text-align: center;
+    display:block;
+    @extend %clearfix;
+}
+.subpagetitle {
+    font-size: 30px;
+    line-height: 0.8;
+    a {
+        font-size:40px;
+        text-decoration: none;
+        color:$c-blue;
+        text-shadow: $shadow-text;
+    } 
+}
+.pagebutton {
+    li {
+        list-style:none;
+        background-color:$c-blue;
+        box-shadow:$shadow-sm;
+        border-radius:5px;
+        margin: 15px;
+        padding: 15px;
+    }
+    a {
+        text-decoration:none;
+        color:$c-white;
+    }
+}
+
+// media for medium screens
+@include media-query($mediumscreen){
+    .pageheader {
+        padding: 20px 15px 5px 25px;
+    }
+    .subpagetitle {
+        font-size: 55px;
+        a {
+            font-size:65px;
+        }
+    }
+    .page {
+        padding: 15px 10px;
+    }
+}
+// media for large screens
+@include media-query($largescreen){ 
+    .contentwrapper {
+        padding: 15px $content-padding-lg 30px;
+    }
+    .column2 {
+        float:left;
+        width:50%;
+        padding: 0 5px;
+    }
+
+}

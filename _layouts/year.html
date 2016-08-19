@@ -1,0 +1,50 @@
+---
+layout: default
+---
+<div class="page">
+    {% assign year = page.title %}
+    {% assign prevyear = year | minus:1 %}
+    {% assign nextyear = year | plus:1 %}
+    <div class="pageheader">
+        <h3 class="subpagetitle"><a class="arrow" href="argonaut{{prevyear}}.html">«</a> {{year}} <a href="argonaut{{nextyear}}.html">»</a></h3>
+    </div>
+        <!-- 
+            urls should be years/argonaut{{ year }}.html
+            site.data.argonaut
+            title,date,year,description,subject,id,url 
+            
+            each year just needs a md with the year as title
+            
+            used this python to generate:
+            for year in range (1898,2011):
+                filename = "argonaut" + str(year) + ".md"
+                with open (filename, 'w') as md:
+                    md.write("""---
+                    layout: year
+                    title: """ + str(year) + """
+                    ---
+                    """)
+                    
+        -->
+    <div class="columnwrapper">
+        
+        <img src="../images/years/argonaut{{year}}_sm.jpg" alt="Argonaut {{year}}">
+        
+        <h3>Issue date, Subjects</h3>
+
+        <ul class="issuelist">
+            {% assign issues = site.data.argonaut | where: "year", year %}
+            {% for issue in issues %}
+
+            <li>
+                <div class="issue"><a href="{{ issue.url }}">{{ issue.title }}</a></div>
+                <div class="subject">{{ issue.subject }}</div>
+            </li>
+            
+            {% endfor %}
+            
+        </ul>
+
+    </div>
+
+</div>
