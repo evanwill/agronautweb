@@ -20,7 +20,6 @@ layout: default
 
     <div class="pageheader">
         <h3 class="subpagetitle"><a class="arrow" href="{{prev}}">«</a> {{year}} <a href="{{next}}">»</a></h3>
-        <!--<h3 class="subpagetitle"><a class="arrow" href="argonaut{{prevyear}}.html">«</a> {{year}} <a href="argonaut{{nextyear}}.html">»</a></h3>-->
     </div>
         <!-- 
             urls should be years/argonaut{{ year }}.html
@@ -43,7 +42,7 @@ layout: default
     <div class="columnwrapper">
         
         <img src="../images/years/argonaut{{year}}_sm.jpg" alt="Argonaut {{year}}">
-        
+        <!-- as list:
         <h3>Issue date, Subjects</h3>
 
         <ul class="issuelist">
@@ -58,6 +57,27 @@ layout: default
             {% endfor %}
             
         </ul>
+        -->
+        <!-- as table: -->
+        <table>
+            <thead>
+                <tr>
+                    <th>Thumbnail</th>
+                    <th>Issue date</th>
+                    <th>Subjects</th>
+                </tr>
+            </thead>
+            
+            {% assign issues = site.data.argonaut | where: "year", year %}
+            {% for issue in issues %}
+            <tr>
+                <td><img src="{{ issue.url | replace_first: 'cdm/ref','utils/getthumbnail' }}"></td>
+                <td><a href="{{ issue.url }}">{{ issue.title }}</a></td>
+                <td>{{ issue.subject }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+
 
     </div>
 
