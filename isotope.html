@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <style>
+            
+.grid { width: 500px;}
+.grid-item {
+  float: left;
+  width: 150px;
+  height: 150px;
+  background: #e6e5e4;
+  border: 2px solid #b6b5b4;
+}
+
+.grid-item--width2 { width: 200px; }
+.grid-item--height2 { height: 400px; }
+
+</style>
+
+<script src="https://unpkg.com/isotope-layout@3.0/dist/isotope.pkgd.min.js"></script>
+
+</head>
+
+<body>
+    
+    <div class="grid" data-isotope='{ "itemSelector": ".grid-item", "layoutMode": "masonry" }'>
+
+  <div class="grid-item">...</div>
+  <div class="grid-item grid-item--width2 grid-item--height2 ">...</div>
+  <div class="grid-item">...</div>
+  <div class="grid-item">...</div>
+  <div class="grid-item grid-item--width2">...</div>
+  <div class="grid-item grid-item--height2 ">...</div>
+  <div class="grid-item grid-item--height2 ">...</div>
+  <div class="grid-item grid-item--width2">...</div>
+  <div class="grid-item">...</div>
+</div>
+
+
+
+</body>
+</html>
