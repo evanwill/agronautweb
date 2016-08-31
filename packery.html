@@ -1,0 +1,79 @@
+<html>
+    <head>
+        <!--<script src="https://unpkg.com/packery@2.1/dist/packery.pkgd.min.js"></script>-->
+        <script src="js/packery.pkgd.min.js"></script>
+
+        <style>
+            * { box-sizing: border-box; } 
+
+            /* ---- grid ---- */
+
+            .grid {
+            background: #DDD;
+            width:800px;
+            margin: 0 auto;
+            }
+
+            /* clear fix */
+            .grid:after {
+            content: '';
+            display: block;
+            clear: both;
+            }
+
+            /* ---- .grid-item ---- */
+
+            .grid-item {
+            float: left;
+            width: 100px;
+            height: 100px;
+            background: #C09;
+            border: 2px solid hsla(0, 0%, 0%, 0.5);
+            }
+
+            .grid-item--width2 { width: 220px; }
+            .grid-item--height2 { height: 220px; }
+
+        </style>
+    </head>
+    <body>
+
+        <div class="grid">
+            <div class="grid-sizer"></div>
+            <div class="gutter-sizer"></div>
+            <div class="grid-item grid-item--width2"></div>
+            <div class="grid-item grid-item--height2"></div>
+            <div class="grid-item"></div>
+            <div class="grid-item"></div>
+            <div class="grid-item grid-item--width2 grid-item--height2"></div>
+            <div class="grid-item grid-item--width2"></div>
+            <div class="grid-item grid-item--width2"></div>
+            <div class="grid-item grid-item--height2"></div>
+            <div class="grid-item"></div>
+            <div class="grid-item grid-item--width2"></div>
+            <div class="grid-item grid-item--height2"></div>
+            <div class="grid-item"></div>
+            <div class="grid-item"></div>
+            <div class="grid-item grid-item--width2 grid-item--height2"></div>
+            <div class="grid-item"></div>
+            <div class="grid-item grid-item--width2"></div>
+            <div class="grid-item grid-item--height2"></div>
+            <div class="grid-item"></div>
+        </div>
+
+        <script>
+
+            var elem = document.querySelector('.grid');
+            var pckry = new Packery( elem, {
+                // options
+                itemSelector: '.grid-item',
+                gutter: 10
+            });
+
+        </script>
+
+
+
+
+    </body>
+</html>

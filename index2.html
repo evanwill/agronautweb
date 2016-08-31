@@ -16,7 +16,7 @@ title: Home
         <!-- create random gen newspaper http://isotope.metafizzy.co/layout-modes/masonry.html http://masonry.desandro.com/ -->
         
         <script src="js/masonry.pkgd.min.js"></script>
-     <!--   <style>
+     <style>
 
 * { box-sizing: border-box; }
 
@@ -26,7 +26,7 @@ title: Home
   background: #EEE;
 /*  max-width: 1200px;
  width: 800px; */
- width: 900px;
+
   margin: 0 auto;
 }
 
@@ -61,7 +61,7 @@ title: Home
 .grid-sizer { width: 5%; }
 
 </style>
-<div class="grid" data-masonry='{ "itemSelector": ".grid-item", "columnWidth": 50, percentPosition: "true" }'>
+<div class="grid" >
             <div class="grid-sizer"></div>
             <div class="grid-item"><img src="images/years/argonaut1901_sm.jpg"></div>
             <div class="grid-item grid-item--width2"><img src="images/years/argonaut1902_sm.jpg"></div>
@@ -75,13 +75,28 @@ title: Home
             <div class="grid-item"><img src="images/years/argonaut1910_sm.jpg"></div>
         </div>
         
-        </div>-->
+        </div>
+
+        <script>
+          
+          var grid = document.querySelector('.grid');
+          var msnry;
+
+          imagesLoaded( grid, function() {
+            // init Isotope after all images have loaded
+            msnry = new Masonry( grid, {
+              itemSelector: '.grid-item',
+              columnWidth: '.grid-sizer',
+              percentPosition: true
+            });
+          });
+
+        </script>
  
- 
+ <!-- 
  <style>
  * { box-sizing: border-box; }
 
-body { font-family: sans-serif; }
 
 /* ---- grid ---- */
 
@@ -145,7 +160,7 @@ body { font-family: sans-serif; }
   <div class="grid-item"></div>
   <div class="grid-item"></div>
   <div class="grid-item grid-item--height2"></div>
-</div>
+</div> -->
  
 
         <!--
