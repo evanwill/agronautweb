@@ -28,6 +28,7 @@
     // display none is toggled by onclick js
     display: none;
     position: absolute; right:10px; top: 0px;
+    z-index: 99;
     width:820px;
     background-color: $c-light-grey; 
     box-shadow:$shadow-lg;    

@@ -8,27 +8,28 @@
     function yearsToggle() {
         document.getElementById("yearsnav").classList.toggle("show");
     }
-    // all collections dropdown
+    /* all collections dropdown
     function showCollections() {
         document.getElementById("collectionlist").style.top ="0px";
     }
     // all collections close
     function closeAll() {
         document.getElementById("collectionlist").style.top ="-3000px";
-    }
+    } */
     // new all collections toggle
     function collectionsToggle() {
         document.getElementById("collectionsnav").classList.toggle("show");
     }
     
     // add onclick functions to the elements, old school way = easy cross-browser compatibility 
-    
-    // document.getElementById("opencollections").onclick = function () { showCollections(); };
+    // open + close all collections nav
     document.getElementById("opencollections").onclick = function () { collectionsToggle(); };
-    // document.getElementById("closecollections").onclick = function () { closeAll(); };
     document.getElementById("closecollections").onclick = function () { collectionsToggle(); };
-    document.getElementById("navopen").onclick = function () { navOpen(); };
+    // open + close years nav
     document.getElementById("openyears").onclick = function () { yearsToggle(); };
     document.getElementById("closeyears").onclick = function() { yearsToggle(); };
+    // open + close small nav box
+    document.getElementById("navopen").onclick = function () { navOpen(); };
+
     
 </script>
