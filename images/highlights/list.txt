@@ -77,4 +77,3 @@
 995_1_head_taft.PNG
 995_5_art_gym.PNG
 995_6_ad_taylor.PNG
-list.txt

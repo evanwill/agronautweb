@@ -1,10 +1,7 @@
 ---
-layout: default
+layout: packery_index
 title: Home
 ---
-
-<script src="js/packery.pkgd.min.js"></script>
-<script src="js/imagesloaded.pkgd.min.js"></script>
 
 <style>
     /* styles for masthead */
@@ -229,54 +226,6 @@ title: Home
 
         </div>
         </div>
-
-<script>
-// Fisher-Yates shuffle https://bost.ocks.org/mike/shuffle/
-function shuffle(array) {
-  var m = array.length, t, i;
-
-  // While there remain elements to shuffle…
-  while (m) {
-
-    // Pick a remaining element…
-    i = Math.floor(Math.random() * m--);
-
-    // And swap it with the current element.
-    t = array[m];
-    array[m] = array[i];
-    array[i] = t;
-  }
-
-  return array;
-}
-
-// get items and shuffle 
-var items = document.getElementsByClassName("grid-item");
-var items_array = Array.prototype.slice.call(items); 
-
-shuffle(items_array);
-
-for (var i = 0; i < 15; ++i) {
-    var item = items_array[i]; 
-    item.classList.toggle("show");
-};
-
-</script>
-
-<script>
-    var grid = document.querySelector('.grid');
-    var pckry;
-
-    imagesLoaded( grid, function() {
-    // init Isotope after all images have loaded
-    msnry = new Packery( grid, {
-        itemSelector: '.grid-item',
-        gutter: '.gutter-sizer',
-        percentPosition: true
-    });
-    });
-
-</script>
 
         <!-- append more stuff http://packery.metafizzy.co/methods.html http://codepen.io/desandro/pen/ndoxe -->
         <!-- reload pckry.reloadItems() -->
