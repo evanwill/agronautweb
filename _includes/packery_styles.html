@@ -1,0 +1,54 @@
+<style>
+    /* styles for masthead */
+    .masthead {
+        text-align: center;
+        margin-bottom: 25px; 
+    }
+    .masthead p { 
+        font-size: 30px;
+        border-bottom: 2px solid grey;
+        border-top: 2px solid grey;
+    }
+    /* styles for highlights in packery */
+    * { box-sizing: border-box; } 
+    .news {
+        width:100%; 
+        max-width:1000px; 
+        margin: 2px auto;}
+    .grid {
+        max-width: 1000px;
+    }
+    /* use grid-sizer and gutter-sizer to set columnWidth and gutter options, allows media queries to set the widths */
+    .grid-sizer { width: 20%; }
+    .gutter-sizer { width: 1%; }
+    /* clear fix */
+    .grid:after {
+        content: '';
+        display: block;
+        clear: both;
+    }
+    /* grid item styles, set to responsive %. initially all grid-items are hidden, script picks random to display */
+    .grid-item {
+        float: left;
+        width: 24%;
+        display:none;
+    }
+    .grid-xl { width:100%;}
+    .grid-lg { width:74%;}
+    .grid-md { width:49%;}
+    .grid-sm { width:24%;}
+    .grid img {width:100%;}
+    /* style title to show on hover */
+    .reveal {
+        text-align: center;
+        padding: 5px;
+        opacity: 0;
+        position: absolute;
+        top: 0; left:0;
+        
+    }
+    .reveal:hover { opacity:100;}
+
+    /* need show class, to cascade properly */
+    .show {display:block;}
+</style>

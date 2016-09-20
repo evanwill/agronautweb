@@ -21,14 +21,8 @@ layout: default
     <div class="pageheader">
         <h3 class="subpagetitle"><a class="arrow" href="{{prev}}">«</a> {{year}} <a href="{{next}}">»</a></h3>
     </div>
-        <!-- 
-            urls should be years/argonaut{{ year }}.html
-            site.data.argonaut
-            title,date,year,description,subject,id,url 
-            
-            each year just needs a md with the year as title
-            
-            used this python to generate:
+        <!-- creates year pages at years/argonaut{{ year }}.html from data file site.data.argonaut that has fields: title,date,year,description,subject,id,refID
+        each year needs a md with the year as title, generate the md using python:
             for year in range (1898,2011):
                 filename = "argonaut" + str(year) + ".md"
                 with open (filename, 'w') as md:
@@ -36,29 +30,13 @@ layout: default
                     layout: year
                     title: """ + str(year) + """
                     ---
-                    """)
-                    
+                    """)         
         -->
     <div class="columnwrapper">
         
         <img src="../images/years/argonaut{{year}}_sm.jpg" alt="Argonaut {{year}}">
-        <!-- as list:
-        <h3>Issue date, Subjects</h3>
 
-        <ul class="issuelist">
-            {% assign issues = site.data.argonaut | where: "year", year %}
-            {% for issue in issues %}
-
-            <li>
-                <div class="issue"><a href="{{ issue.url }}">{{ issue.title }}</a></div>
-                <div class="subject">{{ issue.subject }}</div>
-            </li>
-            
-            {% endfor %}
-            
-        </ul>
-        -->
-        <!-- as table: -->
+        <!-- issue table: -->
         <table>
             <thead>
                 <tr>
@@ -71,13 +49,12 @@ layout: default
             {% assign issues = site.data.argonaut | where: "year", year %}
             {% for issue in issues %}
             <tr>
-                <td><img src="{{ issue.url | replace_first: 'cdm/ref','utils/getthumbnail' }}"></td>
-                <td><a href="{{ issue.url }}">{{ issue.title }}</a></td>
+                <td><img src="http://digital.lib.uidaho.edu/utils/getthumbnail/collection/argonaut/id/{{ issue.refID }}"></td>
+                <td><a href="http://digital.lib.uidaho.edu/cdm/ref/collection/argonaut/id/{{ issue.refID }}">{{ issue.title }}</a></td>
                 <td>{{ issue.subject }}</td>
             </tr>
             {% endfor %}
         </table>
-
 
     </div>
 
