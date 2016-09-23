@@ -1,61 +1,171 @@
----
-layout: default
----
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  {% include head.html %}
 
-{% assign year = page.title %}
-{% if year == 1898 %}
-    {% assign prev = '../years.html' %}
-{% else %}
-    {% assign prevyear = year | minus:1 %}
-    {% assign prev = 'argonaut' | append: prevyear | append: '.html' %}
-{% endif %}
-{% if year == 2010 %}
-    {% assign next = '../years.html' %}
-{% else %}
-    {% assign nextyear = year | plus:1 %}
-    {% assign next = 'argonaut' | append: nextyear | append: '.html' %}
-{% endif %}
+  <style>
+.year-masthead { width: 100%;}
 
-<div class="page">
+.list {
+  font-family:sans-serif;
+}
+td {
+  padding:10px; 
+  border:solid 1px #eee;
+}
 
-    <div class="pageheader">
-        <h3 class="subpagetitle"><a class="arrow" href="{{prev}}">«</a> {{year}} <a href="{{next}}">»</a></h3>
-    </div>
-        <!-- creates year pages at years/argonaut{{ year }}.html from data file site.data.argonaut that has fields: title,date,year,description,subject,id,refID
-        each year needs a md with the year as title, generate the md using python:
-            for year in range (1898,2011):
-                filename = "argonaut" + str(year) + ".md"
-                with open (filename, 'w') as md:
-                    md.write("""---
-                    layout: year
-                    title: """ + str(year) + """
-                    ---
-                    """)         
-        -->
-    <div class="columnwrapper">
-        
-        <img src="../images/years/argonaut{{year}}_sm.jpg" alt="Argonaut {{year}}">
+.issueTable input {
+  border:solid 1px #ccc;
+  border-radius: 5px;
+  padding:7px 14px;
+  margin-bottom:10px
+}
+.issueTable input:focus {
+  outline:none;
+  border-color:#aaa;
+}
+.sort {
+  padding:8px 30px;
+  border-radius: 6px;
+  border:none;
+  display:inline-block;
+  color:#fff;
+  text-decoration: none;
+  background-color: #28a8e0;
+  height:30px;
+}
+.sort:hover {
+  text-decoration: none;
+  background-color:#1b8aba;
+}
+.sort:focus {
+  outline:none;
+}
+.sort:after {
+  display:inline-block;
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  content:"";
+  position: relative;
+  top:-10px;
+  right:-5px;
+}
+.sort.asc:after {
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid #fff;
+  content:"";
+  position: relative;
+  top:4px;
+  right:-5px;
+}
+.sort.desc:after {
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 5px solid #fff;
+  content:"";
+  position: relative;
+  top:-4px;
+  right:-5px;
+}
+</style>
 
-        <!-- issue table: -->
-        <table>
-            <thead>
-                <tr>
-                    <th>Thumbnail</th>
-                    <th>Issue date</th>
-                    <th>Subjects</th>
-                </tr>
-            </thead>
+  </head>
+
+  <body>
+
+    {% include header.html %}
+
+    <div class="contentwrapper">
+
+        {% assign year = page.title %}
+        {% if year == 1898 %}
+            {% assign prev = '../years.html' %}
+        {% else %}
+            {% assign prevyear = year | minus:1 %}
+            {% assign prev = 'argonaut' | append: prevyear | append: '.html' %}
+        {% endif %}
+        {% if year == 2010 %}
+            {% assign next = '../years.html' %}
+        {% else %}
+            {% assign nextyear = year | plus:1 %}
+            {% assign next = 'argonaut' | append: nextyear | append: '.html' %}
+        {% endif %}
+
+        <div class="page">
             
-            {% assign issues = site.data.argonaut | where: "year", year %}
-            {% for issue in issues %}
-            <tr>
-                <td><img src="http://digital.lib.uidaho.edu/utils/getthumbnail/collection/argonaut/id/{{ issue.refID }}"></td>
-                <td><a href="http://digital.lib.uidaho.edu/cdm/ref/collection/argonaut/id/{{ issue.refID }}">{{ issue.title }}</a></td>
-                <td>{{ issue.subject }}</td>
-            </tr>
-            {% endfor %}
-        </table>
+            <img class="year-masthead" src="../images/years/argonaut{{year}}_sm.jpg" alt="Argonaut {{year}}">
 
+            <div class="pageheader">
+                <h3 class="subpagetitle"><a class="arrow" href="{{prev}}">«</a> {{year}} <a href="{{next}}">»</a></h3>
+            </div>
+                <!-- creates year pages at years/argonaut{{ year }}.html from data file site.data.argonaut that has fields: title,date,year,description,subject,id,refID
+                each year needs a md with the year as title, generate the md using python:
+                    for year in range (1898,2011):
+                        filename = "argonaut" + str(year) + ".md"
+                        with open (filename, 'w') as md:
+                            md.write("""---
+                            layout: year
+                            title: """ + str(year) + """
+                            ---
+                            """)         
+                -->
+            <div class="columnwrapper">
+                
+                <!-- issue table: -->
+                <div id="issueTable">
+                <input class="search" placeholder="Simple search..." >
+                <!--<button class="sort" data-sort="issue-date">Sort by date</button>-->
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Thumbnail</th>
+                                <th><button class="sort" data-sort="issue-date">Issue</button></th>
+                                <th>Subjects</th>
+                            </tr>
+                        </thead>
+                        <tbody class="list">
+                            {% assign issues = site.data.argonaut | where: "year", year %}
+                            {% for issue in issues %}
+                            <tr>
+                                <td class="issue-thumb"><img src="http://digital.lib.uidaho.edu/utils/getthumbnail/collection/argonaut/id/{{ issue.refID }}" alt="issue thumbnail"></td>
+                                <td class="issue-date" style="display:none">{{ issue.date }}</td>
+                                <td class="issue-title"><a href="http://digital.lib.uidaho.edu/cdm/ref/collection/argonaut/id/{{ issue.refID }}">{{ issue.title }}</a></td>
+                                <td class="issue-subject">{{ issue.subject }}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+
+                </div>
+
+            </div>
+
+        </div>
     </div>
+    
+    {% include footer.html %}
+    
+    {% include scripts.html %}
 
-</div>
+    <!-- add list.js http://www.listjs.com/ @javve -->
+    <script src="../js/list.min.js"></script>
+    <script> 
+        var options = {
+            valueNames: [ 'issue-date', 'issue-title', 'issue-subject' ]
+        };
+        var issueList = new List('issueTable', options);
+    </script>
+    
+    {% include analytics.html %}
+
+  </body>
+
+</html>    
