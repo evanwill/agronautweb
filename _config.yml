@@ -17,3 +17,15 @@ url: "https://evanwill.github.io"
 
 # Build settings
 markdown: kramdown
+
+# deploy commands https://gist.github.com/evanwill/12af569da8b53f037d4f507a0254f76c
+# deploy:
+# - rsync -r ./ ../../test/
+
+# page gen settings https://github.com/avillafiorita/jekyll-datapage_gen
+page_gen:
+  - data: 'argoyears'
+    template: 'year'
+    name: 'date'
+    dir: 'year2'
+    extension: 'html'
