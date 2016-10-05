@@ -27,5 +27,5 @@ page_gen:
   - data: 'argoyears'
     template: 'year'
     name: 'date'
-    dir: 'year2'
+    dir: 'years'
     extension: 'html'

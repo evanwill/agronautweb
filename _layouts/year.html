@@ -9,21 +9,27 @@
 .list {
   font-family:sans-serif;
 }
-td {
-  padding:10px; 
-  border:solid 1px #eee;
+table { 
+    border-collapse: collapse; 
 }
-
-.issueTable input {
+th { 
+    border-bottom: solid 2px black;
+}
+td {
+  padding:5px; 
+  border-bottom:solid 1px #eee;
+}
+/*
+#issueTable input {
   border:solid 1px #ccc;
   border-radius: 5px;
   padding:7px 14px;
   margin-bottom:10px
 }
-.issueTable input:focus {
+#issueTable input:focus {
   outline:none;
   border-color:#aaa;
-}
+}*/
 .sort {
   padding:8px 30px;
   border-radius: 6px;
@@ -87,16 +93,14 @@ td {
 
         {% assign year = page.title %}
         {% if year == 1898 %}
-            {% assign prev = '../years.html' %}
+            {% assign prevyear = '../years.html' %}
         {% else %}
-            {% assign prevyear = year | minus:1 %}
-            {% assign prev = 'argonaut' | append: prevyear | append: '.html' %}
+            {% assign prevyear = year | minus:1 | append: '.html' %}
         {% endif %}
         {% if year == 2010 %}
-            {% assign next = '../years.html' %}
+            {% assign nextyear = '../years.html' %}
         {% else %}
-            {% assign nextyear = year | plus:1 %}
-            {% assign next = 'argonaut' | append: nextyear | append: '.html' %}
+            {% assign nextyear = year | plus:1 | append: '.html' %}
         {% endif %}
 
         <div class="page">
@@ -104,24 +108,15 @@ td {
             <img class="year-masthead" src="../images/years/argonaut{{year}}_sm.jpg" alt="Argonaut {{year}}">
 
             <div class="pageheader">
-                <h3 class="subpagetitle"><a class="arrow" href="{{prev}}">«</a> {{year}} <a href="{{next}}">»</a></h3>
+                <h3 class="subpagetitle"><a class="arrow" href="{{prevyear}}">«</a> {{year}} <a href="{{nextyear}}">»</a></h3> <input class="search" placeholder="Simple search..." size="18" >
             </div>
-                <!-- creates year pages at years/argonaut{{ year }}.html from data file site.data.argonaut that has fields: title,date,year,description,subject,id,refID
-                each year needs a md with the year as title, generate the md using python:
-                    for year in range (1898,2011):
-                        filename = "argonaut" + str(year) + ".md"
-                        with open (filename, 'w') as md:
-                            md.write("""---
-                            layout: year
-                            title: """ + str(year) + """
-                            ---
-                            """)         
+                <!-- creates year pages at years/argonaut{{ year }}.html from data file site.data.argonaut that has fields: title,date,year,description,subject,id,refID        
                 -->
             <div class="columnwrapper">
                 
                 <!-- issue table: -->
                 <div id="issueTable">
-                <input class="search" placeholder="Simple search..." >
+                
                 <!--<button class="sort" data-sort="issue-date">Sort by date</button>-->
                     <table>
                         <thead>
