@@ -1,5 +1,7 @@
 // all collections nav
-
+.allcollections {
+    font-family: $content-font;
+}
 #opencollections {
     cursor: pointer;
     z-index: 999;
@@ -50,17 +52,15 @@
     h4 {
         font-size: 24px;
         margin-bottom: 8px;
+        border-bottom: thin solid;
     }
 }	
 .searchallcollections {
-    margin:0px -14px 0px 0px;
-    float:right;
     input { 
         font-size: 12px;
         line-height:1.5em;
         border-radius:5px;
         display:inline;
-        font-family:$base-font-family;
         }
     .button-all {
         color:#fff;
@@ -75,7 +75,6 @@
     font-size: 16px;
     border: 1px solid #fff;
     border-radius: 10px;
-    margin: -14px -5px 0px 0px;
     padding: 2px 3px;
     font-family:verdana, arial;
 }
