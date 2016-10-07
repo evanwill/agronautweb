@@ -15,12 +15,12 @@ body {
     font: $base-font-weight #{$base-font-size}/#{$base-line-height} $base-font-family;
     color: $text-color;
     background: $main-background;
-    -webkit-text-size-adjust: 100%;
+    /* -webkit-text-size-adjust: 100%;
     -webkit-font-feature-settings: "kern" 1;
     -moz-font-feature-settings: "kern" 1;
     -o-font-feature-settings: "kern" 1;
     font-feature-settings: "kern" 1;
-    font-kerning: normal;
+    font-kerning: normal; */
 }
 
 // Images
@@ -38,13 +38,13 @@ h1, h2, h3, h4, h5, h6 {
 .hide-small { display:none; }
 
 @media (min-width: $mediumscreen){
-    .hide-small{display:initial;}
+    .hide-small{display:block;/*initial;*/}
     .hide-medium{display:none;}
 
 }
 
 @media (min-width: $largescreen){
-    .hide-small{display:initial;}
+    .hide-small{display:block;/*initial;*/}
     .hide-large{display:none;}
 }
 
