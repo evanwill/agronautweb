@@ -69,7 +69,10 @@
     
     {% include footer.html %}
     
-    {% include scripts.html %}
+    <script>
+      {% include js/allCollections.js %}
+      {% include js/navbar.js %}
+    </script>
 
     <!-- add list.js http://www.listjs.com/ @javve -->
     <script src="{{ site.baseurl }}/js/list.min.js"></script>

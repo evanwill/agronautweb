@@ -73,6 +73,7 @@ $largescreen:      1024px; //820px
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import
     "base",
+    "packery_index",
     "campusheader",
     "jumpyear",
     "allcollectionsOld",

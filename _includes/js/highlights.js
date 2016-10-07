@@ -1,8 +1,5 @@
 /* js for argonaut random news highlights 
-requires: 
-<script src="js/packery.pkgd.min.js"></script>
-<script src="js/imagesloaded.pkgd.min.js"></script> 
-*/
+requires js/packery.pkgd.min.js and js/imagesloaded.pkgd.min.js */
 /* Fisher-Yates shuffle https://bost.ocks.org/mike/shuffle/ */
 function shuffle(array) {
   var m = array.length, t, i;
@@ -16,7 +13,7 @@ function shuffle(array) {
 }
 /* toggle visiblity of news highlights to display */
 function toggleHighlights(array) {
-    for (var i = 0; i < 15; ++i) {
+    for (var i = 0; i < 16; ++i) {
     var item = array[i]; 
     item.classList.toggle("show");
     };

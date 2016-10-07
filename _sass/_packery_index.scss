@@ -1,0 +1,52 @@
+/* styles for packery index page */
+.news {
+    width:100%; 
+    max-width:1000px; 
+    margin: 2px auto;
+    * { box-sizing: border-box; } 
+    }
+.masthead {
+    text-align: center;
+    margin-bottom: 25px; 
+}
+.masthead p { 
+    font-size: 30px;
+    border-bottom: 2px solid $c-grey;
+    border-top: 2px solid $c-grey;
+}
+/* styles for highlights in packery */
+.grid {
+    max-width: 1000px;
+}
+/* use grid-sizer and gutter-sizer to set columnWidth and gutter options, allows media queries to set the widths */
+.grid-sizer { width: 20%; }
+.gutter-sizer { width: 1%; }
+/* clear fix */
+.grid:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+/* grid item styles, set to responsive %. initially all grid-items are hidden, script picks random to display */
+.grid-item {
+    float: left;
+    width: 24%;
+    display:none;
+    /*cursor: pointer;*/
+}
+.grid-xl { width:100%;}
+.grid-lg { width:49%;}
+.grid-md { width:49%;}
+.grid-sm { width:24%;}
+.grid img {width:100%;}
+/* style title-date to show on click */
+.reveal {
+    text-align: center;
+    margin-top: 25%;
+    display:none;
+    width: 100%; 
+    background: rgba(120, 154, 161, 0.25);
+    text-decoration:none;
+    font-size: 24px;
+
+}
