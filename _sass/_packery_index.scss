@@ -10,7 +10,7 @@
     margin-bottom: 25px; 
 }
 .masthead p { 
-    font-size: 30px;
+    font-size: 16px;
     border-bottom: 2px solid $c-grey;
     border-top: 2px solid $c-grey;
 }
@@ -32,13 +32,12 @@
     float: left;
     width: 24%;
     display:none;
-    /*cursor: pointer;*/
 }
 .grid-xl { width:100%;}
 .grid-lg { width:49%;}
 .grid-md { width:49%;}
 .grid-sm { width:24%;}
-.grid img {width:100%;}
+.grid img { width:100%;}
 /* style title-date to show on click */
 .reveal {
     text-align: center;
@@ -48,5 +47,23 @@
     background: rgba(120, 154, 161, 0.25);
     text-decoration:none;
     font-size: 24px;
-
+}
+/* media for medium screens */
+@include media-query($mediumscreen){
+    .masthead {
+        .subpagetitle {
+            font-size: 55px;
+            a {
+                font-size:65px;
+            }
+        }
+        p { font-size: 30px; }
+    }
+    .page {
+        padding: 15px 10px;
+    }
+}
+/* media for large screens */
+@include media-query($largescreen){ 
+    
 }
