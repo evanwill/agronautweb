@@ -1,6 +1,5 @@
-// campus collection header base
-
-// digital initiatives logo
+/* campus collection header base */
+/* digital initiatives logo */
 .digitalheader {
     @extend %clearfix;
 }
@@ -20,7 +19,7 @@
     }
 }
 
-// title bar
+/* title bar */
 .titlebar { 
     height:$titleh-sm;
     background:$title-background; 
@@ -32,8 +31,6 @@
     ul { list-style-type: none;}
     a {text-decoration: none;}
 }
-    
-// title 
 .title {
     position:absolute; top: 5px;
     line-height:1; 
@@ -43,7 +40,7 @@
     li {display:inline-block;}
 }    
 
-// small nav
+/* small nav */
 .navbox {
     text-align: center;  
     svg {
@@ -79,9 +76,8 @@
         box-shadow: $shadow-sm;   
     }
 }
-// .show {display:block;} necessary for js nav dropdown
-// included at _end.scss to ensure cascading 
-// small nav search
+/* .show {display:block;} necessary for js nav dropdown, included at _end.scss to ensure cascading */
+/* small nav search */
 .search-sm form {   
         input {
             font-family: 'Allan', Helvetica, Rockwell,cursive;
@@ -96,7 +92,7 @@
             margin-left:5px;
         } 
     }
-// subtitle
+/* subtitle */
 .subtitle {
     padding: 0 ($title-padding-sm * 2);
     p { 
@@ -105,9 +101,9 @@
     }
 }    
 
-// media for medium screens
+/* media for medium screens */
 @include media-query($mediumscreen) {
-    // header
+    /* header */
     .dilogo {
         float:none;
         height:30px;
@@ -119,7 +115,7 @@
             font-size:32px;
         }
     }
-    // title bar
+    /* title bar */
     .titlebar {
         height:$titleh-lg;
         padding: 0 $title-padding-sm;
@@ -132,7 +128,6 @@
             margin-left:20px;
         }
     }
-    // subtitle
     .subtitle {
         padding:0 $title-padding-sm;
         p { 
@@ -162,7 +157,7 @@
 
 }    
     
-// media for large screens
+/* media for large screens */
 @include media-query($largescreen) {
     .dilogo {
         margin-bottom:10px;
@@ -175,10 +170,9 @@
     .titlebar {
         padding: 0 $title-padding-lg;
     }
-    // top navigation
+    /* top navigation */
     .topnav {
         position:absolute;bottom:($titleh-lg - 2);right:$title-padding-lg;
-        
         a {
             background-color:$white-back;
             border-color:$c-grey;
@@ -196,11 +190,10 @@
             color:$c-white;
         }
     }
-    // search box
+    /* search box */
     .search form {
         float: right;
-        margin-top:20px;
-        
+        margin-top:20px; 
         input {
             font-size:20px;
             line-height:1.5em;

@@ -16,7 +16,6 @@
     width: 98%;
     margin: 5px auto;
     padding:0;
-    //text-align: center;
     display:block;
     @extend %clearfix;
 }
@@ -45,7 +44,7 @@
     }
 }
 
-// media for medium screens
+/* media for medium screens */
 @include media-query($mediumscreen){
     .pageheader {
         padding: 20px 15px 5px 25px;
@@ -60,7 +59,7 @@
         padding: 15px 10px;
     }
 }
-// media for large screens
+/* media for large screens */
 @include media-query($largescreen){ 
     .contentwrapper {
         padding: 15px $content-padding-lg 30px;

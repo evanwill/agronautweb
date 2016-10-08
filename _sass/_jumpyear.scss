@@ -1,8 +1,7 @@
-// jump to year dropdown menu
+/* jump to year dropdown menu */
 .yearsmenu {
     position: absolute; top:($titleh-lg + 1); right:$title-padding-lg;
 }
-// style button, match topnav
 #openyears {
     a {  
         cursor: pointer;
@@ -23,9 +22,8 @@
         color:$c-white;
     }
 } 
-// years dropdown
 .years {
-    // display none is toggled by onclick js
+    /* display none is toggled by onclick js */
     display: none;
     position: absolute; right:10px; top: 0px;
     z-index: 99;
