@@ -1,7 +1,7 @@
 /* scripts v2,simple = support for old IE browsers */
 /* open/toggle small nav */
 function navToggle() {
-    document.getElementById("navdropdown").style.display = ( document.getElementById("navdropdown").style.display == "block") ? "none" : "block";
+    document.getElementById("menu").style.display = ( document.getElementById("menu").style.display == "block") ? "none" : "block";
 }
 /* open/toggle jump years */
 function yearsToggle() {

@@ -53,34 +53,32 @@
         path {fill:$c-white;}
     } 
 }
-.smallnav {
+.menu {
     display:none;
     font-size:18px;
-    text-align:right;
+    text-align: right;
     background-color:$c-light-grey;
     padding: 10px $title-padding-sm;
     margin-top:0;
-    box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.3);     
-    li {
-        list-style-type: none;
-        margin-top:10px;
-        margin-left:1px;
-        display:inline-block;
-    }
-    a {
-        text-decoration: none;
-        padding: 5px 5px;
-        border-radius: 5px;
-        color: $c-white;
-        background-color:$c-blue;
-        box-shadow: $shadow-sm;   
-    }
+    box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.3);
+}
+.nav-buttons a {
+    margin-top:10px;
+    margin-left:1px;
+    text-align:right;
+    display:inline-block;
+    text-decoration: none;
+    padding: 5px 5px;
+    border-radius: 5px;
+    color: $c-white;
+    background-color:$c-blue;
+    box-shadow: $shadow-sm;   
 }
 /* .show {display:block;} necessary for js nav dropdown, included at _end.scss to ensure cascading */
 /* small nav search */
-.search-sm form {   
+.search form {   
         input {
-            font-family: 'Allan', Helvetica, Rockwell,cursive;
+            font-family: $base-font-family;
             font-size:18px;
             padding: 3px 6px;
             border-radius: 5px;
@@ -143,13 +141,13 @@
             margin-top: 10px;
         } 
     }
-    .smallnav {
+    .nav-buttons {
         font-size: 22px;
         a {
             margin-left:10px;
         }
     }
-    .search-sm form {   
+    .search form {   
         input {
             font-size:22px; 
         }
@@ -171,13 +169,25 @@
         padding: 0 $title-padding-lg;
     }
     /* top navigation */
-    .topnav {
-        position:absolute;bottom:($titleh-lg - 2);right:$title-padding-lg;
+    .menu { 
+        display: block;
+        position:relative;
+        font-size: 16px; 
+        padding: 0;
+        }
+    .nav-buttons {
+        display: initial;
+        font-size: 16px; 
+        padding: 0;
+        margin: 0;
+        position:absolute;
+        bottom:$titleh-lg - 2;
+        right:$title-padding-lg;
         a {
+            display: inline;
             background-color:$white-back;
             border-color:$c-grey;
-            border-top-left-radius: 5px;
-            border-top-right-radius: 5px;
+            border-radius: 5px 5px 0 0;
             border-style: solid solid none solid;
             border-width: 5px 5px 0px 5px;
             padding:3px 7px 0px 7px;
@@ -192,14 +202,16 @@
     }
     /* search box */
     .search form {
-        float: right;
-        margin-top:20px; 
+        position: absolute;
+        bottom: 20px;
+        right:$title-padding-lg; 
         input {
             font-size:20px;
             line-height:1.5em;
             border-radius: 5px;
             display:inline;
-            font-family: 'Allan', Helvetica, Rockwell,cursive;
+            font-family: $base-font-family;
+            padding: 0;
         }    
         .searchbutton {
             color:$c-white;

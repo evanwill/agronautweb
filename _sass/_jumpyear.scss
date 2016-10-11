@@ -1,14 +1,14 @@
 /* jump to year dropdown menu */
 .yearsmenu {
-    position: absolute; top:($titleh-lg + 1); right:$title-padding-lg;
+    position: absolute; 
+    right:$title-padding-lg;
 }
 #openyears {
     a {  
         cursor: pointer;
         background-color:$white-back;
         border-color:$c-grey;
-        border-bottom-left-radius: 5px;
-        border-bottom-right-radius: 5px;
+        border-radius: 0 0 5px 5px;
         border-style: none solid solid solid;
         border-width: 0px 5px 5px 5px;
         padding:3px 7px 0px 7px;
@@ -33,6 +33,7 @@
     border-radius: 5px;
     font-size:22px;
     padding: 10px;
+    text-align: left;
     ul { 
         margin-bottom: 6px;
     }
@@ -42,7 +43,8 @@
         vertical-align:middle;
         a {
             color: $c-black;
-            padding: 5px 16px;  
+            padding: 5px 16px;
+            text-decoration: none;  
         }
         a:hover {
             background-color: $c-blue;
