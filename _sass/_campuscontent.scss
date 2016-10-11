@@ -51,7 +51,10 @@ blockquote {
   padding-left: 2%;
   border-left: 3px solid $c-light-grey;
 } 
-a { color: $c-blue; }
+a { 
+    color: $link-color;
+    text-decoration: none; 
+    }
 
 /* media for medium screens */
 @include media-query($mediumscreen){
