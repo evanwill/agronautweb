@@ -1,22 +1,88 @@
 /* styles for packery index page */
 .news {
     width:100%; 
-    max-width:1000px; 
+    max-width:1100px; 
     margin: 2px auto;
     * { box-sizing: border-box; } 
     }
 .masthead {
     text-align: center;
-    margin-bottom: 25px; 
+    //margin-bottom: 25px; 
+    border-bottom: 2px solid $c-grey;
+    .subpagetitle { 
+        font-size: 20px;
+        border-bottom: 2px solid $c-grey;
+     }
+    .arrow { font-size: 30px; }
+    img { width: 100%; }
 }
 .masthead p { 
     font-size: 16px;
-    border-bottom: 2px solid $c-grey;
-    border-top: 2px solid $c-grey;
+    // border-bottom: 2px solid $c-grey;
+    // border-top: 2px solid $c-grey;
 }
+.masthead nav {
+    font-size: 16px;
+    display:inline;
+}
+/* nav box */
+     
+/* small nav */
+.i-navbox {
+    text-align: center;  
+    svg {
+        width:60px;height:60px;
+        border: 1px solid black; //$c-white;
+        border-radius: 5px;
+        padding: 3px;
+        float: right;
+        margin-top: 10px;
+        path {fill: black;} //$c-white;}
+    } 
+}
+.i-smallnav {
+    display:none;
+    font-size:18px;
+    text-align:right;
+    background-color:$c-light-grey;
+    padding: 10px $title-padding-sm;
+    margin-top:0;
+    box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.3);     
+    li {
+        list-style-type: none;
+        margin-top:10px;
+        margin-left:1px;
+        display:inline-block;
+    }
+    a {
+        text-decoration: none;
+        padding: 5px 5px;
+        border-radius: 5px;
+        color: $c-white;
+        background-color:$c-blue;
+        box-shadow: $shadow-sm;   
+    }
+}
+/* .show {display:block;} necessary for js nav dropdown, included at _end.scss to ensure cascading */
+/* small nav search */
+.i-search-sm form {   
+        input {
+            font-family: 'Allan', Helvetica, Rockwell,cursive;
+            font-size:18px;
+            padding: 3px 6px;
+            border-radius: 5px;
+            display:inline;    
+        }
+        .searchbutton {
+            color:$c-white;
+            background-color: $c-blue;
+            margin-left:5px;
+        } 
+    }
 /* styles for highlights in packery */
 .grid {
-    max-width: 1000px;
+    max-width: 1100px;
+    margin-top: 25px;
 }
 /* use grid-sizer and gutter-sizer to set columnWidth and gutter options, allows media queries to set the widths */
 .grid-sizer { width: 20%; }
@@ -32,6 +98,7 @@
     float: left;
     width: 24%;
     display:none;
+    border-radius: 6px;
 }
 .grid-xl { width:100%;}
 .grid-lg { width:49%;}
@@ -40,13 +107,18 @@
 .grid img { width:100%;}
 /* style title-date to show on click */
 .reveal {
+    position: absolute;
+    top:10%;
     text-align: center;
-    margin-top: 25%;
+    margin: 0;
     display:none;
-    width: 100%; 
-    background: rgba(120, 154, 161, 0.25);
+    width: 100%;  
+    background: rgba(120, 154, 161, 0.35);
     text-decoration:none;
-    font-size: 24px;
+    font-size: 16px;
+    line-height: 1;
+    z-index:97;
+    color: rgb(178,83,0);
 }
 /* media for medium screens */
 @include media-query($mediumscreen){
@@ -61,6 +133,11 @@
     }
     .page {
         padding: 15px 10px;
+    }
+    .reveal { 
+        font-size: 24px;
+        padding: 10%;
+        top: 20%;
     }
 }
 /* media for large screens */

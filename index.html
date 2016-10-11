@@ -11,20 +11,26 @@ title: Home
                 <img src="images/argonaut_header.jpg">
                 <h3 class="subpagetitle"><a class="arrow" href="about.html" title="about">«</a> The Vandal Voice since 1889! <a class="arrow" href="about.html" title="about">»</a></h3>
                 
+                <nav> 
+                    <div style="float:left;">Refresh</div>
+                    
+                    <div>
+                    <a href="#" class="i-navbox " id="i-navopen">
+                        <svg viewBox="0 0 18 15">
+                        <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+                        <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+                        <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+                        </svg> 
+                    </a>
+                    </div>
+                </nav>
                 <p>Digital Highlights Edition</p>
-                
-                <a href="#" class="navbox " id="navopen">
-                    <svg viewBox="0 0 18 15">
-                    <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
-                    <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
-                    <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
-                    </svg> 
-                </a>
-            </div>
+                <div style="clear:both;"></div>
+           </div> 
 
-            <div class="smallnav" id="navdropdown">   
-                <p>stuff about</p>
-  <div class="search-sm">
+            <div class="i-smallnav" id="i-navdropdown">   
+                <p>University of Idaho Library's Argonaut Student Newspaper Digital Collection provides acess to nearly 6,000 issues dating from 1898 to 2010. This page features randomized highlights to get you started exploring this amazing historic collection.</p>
+  <div class="i-search-sm">
     <form method="get" action="http://digital.lib.uidaho.edu/cdm4/results.php">
       <input type="hidden" name="CISOOP1" value="all"></input>
       <input type="text" name="CISOBOX1" size="23" placeholder=" Search All" class="search"></input>
@@ -46,9 +52,19 @@ title: Home
     <li><a href="{{site.baseurl}}/about.html">About the Collection</a></li>
     <li><a href="{{site.baseurl}}/years.html">Browse Years</a></li>
     <li><a href="digital.lib.uidaho.edu/cdm/search/collection/argonaut">Database</a></li>
-    <li>jump year</li>
+    <li>{% include jumpyear.html %}</li>
   </ul>
   </div>
+
+
+  <script>
+      /* open/toggle small nav */
+function inavToggle() {
+    document.getElementById("i-navdropdown").style.display = ( document.getElementById("i-navdropdown").style.display == "block") ? "none" : "block";
+}
+      /* open + close small nav box */
+document.getElementById("i-navopen").onclick = function () { inavToggle(); };
+      </script>
 
             <div class="grid" >
                 
@@ -62,7 +78,7 @@ grab title data from argonaut.csv -->
                     {% assign issue = site.data.argonaut | where: "refID",highlight.refID %}
                     {% assign year = issue | map: "title" %}
 
-                <div onclick="yearClick2(this)" class="grid-item grid-{{ highlight.size }}">
+                <div onclick="yearClick(this)" class="grid-item grid-{{ highlight.size }}">
                     <a href="http://digital.lib.uidaho.edu/cdm/ref/collection/argonaut/id/{{ highlight.refID }}" target="_blank" class="reveal">{{ year }}</a>
                     <div class="highlight">
                     <img class="himg" src="images/highlights/{{ highlight.filename }}" >
@@ -71,34 +87,7 @@ grab title data from argonaut.csv -->
                 {% endfor %}
             
             </div>
-            <style>
-        .reveal {
-        position: absolute;
-        top:20%;
-        text-align: center;
-        margin: 0;
-        display:none;
-        width: 100%;  
-        background: rgba(120, 154, 161, 0.35);
-        text-decoration:none;
-        font-size: 24px;
-        z-index:97;
-        color: rgb(178,83,0);
-/* colors rgb(0,148,178), 0,211,255 178,83,0 255,118,0 */ 
-    }
-    </style>
-<script>
 
-    function yearClick2(elmnt){
-        var title = elmnt.querySelector(".reveal");
-        var imagediv = elmnt.querySelector(".highlight");
-        var himage = elmnt.querySelector(".himg");
-        
-        elmnt.style.border = (elmnt.style.border == "4px solid rgb(120, 154, 161)") ? "none" : "4px solid rgb(120, 154, 161)";
-        title.style.display =(title.style.display == "block") ? "none" : "block";
-        himage.style.opacity = (himage.style.opacity == "0.4") ? "1" : "0.4";
-    }
-</script>
         </div>
 
     </div>

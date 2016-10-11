@@ -1,5 +1,15 @@
 /* js for argonaut random news highlights 
 requires js/packery.pkgd.min.js and js/imagesloaded.pkgd.min.js */
+/* click event for highlights */
+function yearClick(elmnt){
+    var title = elmnt.querySelector(".reveal");
+    var imagediv = elmnt.querySelector(".highlight");
+    var himage = elmnt.querySelector(".himg");
+    
+    elmnt.style.border = (elmnt.style.border == "4px solid rgb(120, 154, 161)") ? "none" : "4px solid rgb(120, 154, 161)";
+    title.style.display =(title.style.display == "block") ? "none" : "block";
+    himage.style.opacity = (himage.style.opacity == "0.4") ? "1" : "0.4";
+}
 /* Fisher-Yates shuffle https://bost.ocks.org/mike/shuffle/ */
 function shuffle(array) {
   var m = array.length, t, i;
@@ -28,14 +38,13 @@ toggleHighlights(items_array);
 /* initialize packery 
 Packery, metafizzy, http://packery.metafizzy.co/ */
 var grid = document.querySelector('.grid');
-var pckry;
-
-/* wait for images to load before running layout 
-imagesLoaded, desandro, http://imagesloaded.desandro.com/ */
-imagesLoaded( grid, function() {
-pckry = new Packery( grid, {
+var pckry = new Packery( grid, {
     itemSelector: '.grid-item',
     gutter: '.gutter-sizer',
     percentPosition: true
 });
-});
+/* wait for images to load before running layout 
+imagesLoaded, desandro, http://imagesloaded.desandro.com/ */
+imagesLoaded( grid ).on( 'progress', function() {
+  pckry.layout();
+}); 
