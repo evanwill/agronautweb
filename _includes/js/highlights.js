@@ -48,3 +48,9 @@ imagesLoaded, desandro, http://imagesloaded.desandro.com/ */
 imagesLoaded( grid ).on( 'progress', function() {
   pckry.layout();
 }); 
+
+/* add refresh button */
+document.getElementById("refresh").onclick = function () { shuffle(items_array);
+   toggleHighlights(items_array);
+   pckry.layout();
+  };
