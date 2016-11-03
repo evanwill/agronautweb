@@ -1,7 +1,6 @@
 /* styles for packery index page */
 .news {
-    width:100%; 
-    max-width:1100px; 
+    width:100%;  
     margin: 2px auto;
     * { box-sizing: border-box; } 
     }
@@ -57,7 +56,6 @@
 
 /* styles for highlights in packery */
 .grid {
-    max-width: 1100px;
     margin-top: 25px;
 }
 /* use grid-sizer and gutter-sizer to set columnWidth and gutter options, allows media queries to set the widths */

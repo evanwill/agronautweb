@@ -1,12 +1,13 @@
 .contentwrapper {
-    margin:0 auto;
-    padding: 5px $content-padding-sm 20px;
+   padding: 5px $content-padding-sm 20px;
 }
 .page {
+    margin: 0 auto;
     padding:6px;
     background-color:$white-back; 
     border-radius: 5px;
     box-shadow: $shadow-lg;
+    max-width: 1250px;
     p { font-family: $content-font;}
 }
 .pageheader {

@@ -51,7 +51,7 @@
                             {% assign issues = site.data.argonaut | where: "year", year %}
                             {% for issue in issues %}
                             <tr>
-                                <td class="issue-thumb"><img src="http://digital.lib.uidaho.edu/utils/getthumbnail/collection/argonaut/id/{{ issue.refID }}" alt="issue thumbnail"></td>
+                                <td class="issue-thumb"><img src="{{ site.baseurl }}/images/thumbs/{{ issue.refID }}.jpg" alt="issue thumbnail"></td>
                                 <td class="issue-date" style="display:none">{{ issue.date }}</td>
                                 <td class="issue-title"><a href="http://digital.lib.uidaho.edu/cdm/ref/collection/argonaut/id/{{ issue.refID }}">{{ issue.title }}</a></td>
                                 <td class="issue-subject">{{ issue.subject }}</td>
