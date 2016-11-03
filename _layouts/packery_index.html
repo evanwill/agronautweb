@@ -30,7 +30,18 @@
 
     {% include footer.html %}
 
-    {% include index_script.html %}
+    <script src="js/packery.pkgd.min.js"></script>
+
+    <script src="js/imagesloaded.pkgd.min.js"></script>
+
+    <script>
+        {% include js/highlights.js %}
+    </script>
+
+    <script>
+        {% include js/allCollections.js %}
+        {% include js/navbar.js %}
+    </script>
     
     {% include analytics.html %}
 

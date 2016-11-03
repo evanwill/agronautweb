@@ -23,7 +23,7 @@ function shuffle(array) {
 }
 /* toggle visiblity of news highlights to display */
 function toggleHighlights(array) {
-    for (var i = 0; i < 16; ++i) {
+    for (var i = 0; i < 12; ++i) {
     var item = array[i]; 
     item.classList.toggle("show");
     };
