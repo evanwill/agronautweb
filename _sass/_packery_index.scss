@@ -8,29 +8,35 @@
     text-align: center;
     //margin-bottom: 25px; 
     border-bottom: 2px solid $c-grey;
-    .subpagetitle { 
+    h3 { 
         font-size: 20px;
-        border-bottom: 2px solid $c-grey;
      }
-    .arrow { font-size: 30px; }
-    img { width: 100%; }
-}
-.masthead p { 
-    font-size: 16px;
-    // border-bottom: 2px solid $c-grey;
-    // border-top: 2px solid $c-grey;
+    .arrow { 
+        font-size: 30px;
+        color:$c-blue;
+        text-shadow: $shadow-text;
+    }
+    img { 
+        width: 100%; 
+        border-bottom: 2px solid $c-grey;
+    }
 }
 .masthead nav {
     font-size: 16px;
+    font-family: $content-font;
     display:inline;
 }
+#i-refresh {
+    float: left;
+}
+#i-menu {
+    float:right;
+}
+.i-button {
+    cursor: pointer;
+    border: 1px solid black; 
+}
 /* index nav box */
-#i-navbox {
-    svg {
-        border-color: black;
-        path {fill: black;}
-    }
-} 
 .i-nav {
     p { 
         font-size: 12px;
@@ -51,6 +57,13 @@
        margin-left: 0px; 
     }
 
+}
+@include media-query($mediumscreen) {
+    .masthead {
+        nav { font-size: 30px; }
+        h3 { font-size: 55px; }
+        .arrow { font-size: 65px; }
+    }
 }
 /* .show {display:block;} necessary for js nav dropdown, included at _end.scss to ensure cascading */
 

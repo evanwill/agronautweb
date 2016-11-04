@@ -24,27 +24,24 @@
             {% assign nextyear = year | plus:1 | append: '.html' %}
         {% endif %}
         <div class="page">
-            
+
             <img class="year-masthead" src="{{ site.baseurl }}/images/years/argonaut{{year}}.jpg" alt="Argonaut {{year}}">
 
-            <div class="pageheader">
-                <h3 class="subpagetitle"><a class="arrow" href="{{prevyear}}" title="previous">«</a> {{year}} <a class="arrow" href="{{nextyear}}" title="next">»</a></h3> 
-                
+            <div>
+                <h3 class="subpagetitle"><a class="arrow" href="{{prevyear}}" title="previous">«</a> Issues from {{year}} <a class="arrow" href="{{nextyear}}" title="next">»</a></h3> 
             </div>
                 <!-- creates year pages at years/argonaut{{ year }}.html from data file site.data.argonaut that has fields: title,date,year,description,subject,id,refID        
                 -->
             <div class="columnwrapper">
-                
                 <!-- issue table: -->
                 <div id="issueTable">
                 <input class="search" placeholder="Simple search..." size="18" >
-                <!--<button class="sort" data-sort="issue-date">Sort by date</button>-->
                     <table>
                         <thead>
                             <tr>
-                                <th>Thumbnail</th>
-                                <th><button class="sort" data-sort="issue-date">Issue</button></th>
-                                <th>Subjects</th>
+                                <th class="thumb"> </th>
+                                <th class="sort" data-sort="issue-date">Date</th>
+                                <th class="subject">Subjects</th>
                             </tr>
                         </thead>
                         <tbody class="list">

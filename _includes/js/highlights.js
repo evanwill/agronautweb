@@ -50,7 +50,7 @@ imagesLoaded( grid ).on( 'progress', function() {
 }); 
 
 /* add refresh button */
-document.getElementById("refresh").onclick = function () { shuffle(items_array);
+document.getElementById("i-refresh").onclick = function () { shuffle(items_array);
    toggleHighlights(items_array);
    pckry.layout();
   };

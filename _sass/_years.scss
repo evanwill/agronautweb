@@ -22,35 +22,31 @@
 }
 /* individual year pages */
 .year-masthead { width: 100%;}
-.list {
-  
-}
 #issueTable {
+  font-family: $content-font;
+    input { float:right;}
     table { 
         border-collapse: collapse; 
+        width: 100%;
     }
     th { 
         border-bottom: solid 2px $c-black;
+        text-align:left;
     }
+    tr:nth-child(even) {
+    background-color: #eee;
+    }
+    tr:nth-child(odd) {
+   background-color:#fff;
+   }
     td {
     padding:5px; 
     border-bottom:solid 1px $c-light-grey;
     }
 }
-.sort {
-  padding:8px 30px;
-  border-radius: 6px;
-  border:none;
-  display:inline-block;
-  color:#fff;
-  text-decoration: none;
-  background-color: $c-blue;
-  height:30px;
-}
-.sort:hover {
-  text-decoration: none;
-  background-color:lighten($c-blue,25%);
-}
+.subject { width: 70%;}
+.thumb { width: 15%;}
+.sort { width: 15%;}
 .sort:focus {
   outline:none;
 }
@@ -71,7 +67,7 @@
   height: 0;
   border-left: 5px solid transparent;
   border-right: 5px solid transparent;
-  border-top: 5px solid #fff;
+  border-top: 5px solid black;
   content:"";
   position: relative;
   top:4px;
@@ -82,9 +78,14 @@
   height: 0;
   border-left: 5px solid transparent;
   border-right: 5px solid transparent;
-  border-bottom: 5px solid #fff;
+  border-bottom: 5px solid black;
   content:"";
   position: relative;
   top:-4px;
   right:-5px;
+}
+@include media-query($mediumscreen){
+  .subject { width: 75%;}
+  .thumb { width: 10%;}
+  .sort { width: 15%;}
 }
