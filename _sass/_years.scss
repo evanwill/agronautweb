@@ -44,9 +44,9 @@
     border-bottom:solid 1px $c-light-grey;
     }
 }
-.subject { width: 70%;}
-.thumb { width: 15%;}
-.sort { width: 15%;}
+.issue-subject { width: 50%;}
+.issue-thumb { width: 25%;}
+.issue-title { width: 25%;}
 .sort:focus {
   outline:none;
 }
@@ -85,7 +85,7 @@
   right:-5px;
 }
 @include media-query($mediumscreen){
-  .subject { width: 75%;}
-  .thumb { width: 10%;}
-  .sort { width: 15%;}
+  .issue-subject { width: 75%;}
+  .issue-thumb { width: 10%;}
+  .issue-title { width: 15%;}
 }

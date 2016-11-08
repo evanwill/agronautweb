@@ -25,7 +25,7 @@
         {% endif %}
         <div class="page">
 
-            <img class="year-masthead" src="{{ site.baseurl }}/images/years/argonaut{{year}}.jpg" alt="Argonaut {{year}}">
+            <img class="year-masthead" src="{{ site.digurl }}images/years/argonaut{{year}}.jpg" alt="Argonaut {{year}}">
 
             <div>
                 <h3 class="subpagetitle"><a class="arrow" href="{{prevyear}}" title="previous">«</a> Issues from {{year}} <a class="arrow" href="{{nextyear}}" title="next">»</a></h3> 
@@ -48,7 +48,7 @@
                             {% assign issues = site.data.argonaut | where: "year", year %}
                             {% for issue in issues %}
                             <tr>
-                                <td class="issue-thumb"><img src="{{ site.baseurl }}/images/thumbs/{{ issue.refID }}.jpg" alt="issue thumbnail"></td>
+                                <td class="issue-thumb"><img src="{{ site.digurl }}images/thumbs/{{ issue.refID }}.jpg" alt="issue thumbnail"></td>
                                 <td class="issue-date" style="display:none">{{ issue.date }}</td>
                                 <td class="issue-title"><a href="http://digital.lib.uidaho.edu/cdm/ref/collection/argonaut/id/{{ issue.refID }}">{{ issue.title }}</a></td>
                                 <td class="issue-subject">{{ issue.subject }}</td>
