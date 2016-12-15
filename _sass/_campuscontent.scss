@@ -44,10 +44,19 @@
         color:$c-white;
     }
 }
-.covers { 
+/* about page */
+.cover { 
+    text-align: center;
+    padding: 5%;
+    margin: 5%;
+    background: $c-blue;
+    border-radius: 5px;
+    a { color: $c-white; }
 }
 .intro { 
     margin-left: 2%;
+    p { margin: 10px 0; }
+    img { padding: 5%;}
 }
 blockquote {
   font-family: $base-font-family;
@@ -83,6 +92,10 @@ a {
     .intro { 
         float:left;
         width: 60%;
+        h4 { 
+            font-size: 30px;
+            margin-top: 10px; 
+            }
     }
 }
 /* media for large screens */
