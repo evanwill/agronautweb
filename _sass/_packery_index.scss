@@ -6,26 +6,24 @@
     }
 .masthead {
     text-align: center;
-    //margin-bottom: 25px; 
+    img { 
+        width: 100%; 
+    }
+}
+.banner {
     border-bottom: 2px solid $c-grey;
+    border-top: 2px solid $c-grey;
+    padding: 5px;
     h3 { 
         font-size: 20px;
+        line-height: .75;
      }
     .arrow { 
         font-size: 30px;
         color:$c-blue;
         text-shadow: $shadow-text;
     }
-    img { 
-        width: 100%; 
-        border-bottom: 2px solid $c-grey;
-    }
 }
-/* .masthead nav {
-    font-size: 16px;
-    font-family: $content-font;
-    display:inline;
-}*/
 #i-refresh {
     float: left;
 }
@@ -36,11 +34,10 @@
     cursor: pointer;
     border: 1px solid black;
     border-radius: 5px;
-    font-size: 16px;
-    font-family: $content-font;
+    font-size: 14px;
     display:inline;
     padding: 5px;
-    margin-top: 3px;
+    line-height: 1;
 }
 /* index nav box */
 .i-nav {
@@ -74,23 +71,47 @@
        margin-left: 0px; 
     }
 }
+/* headline story */
+.headline {
+    margin: 10px 0;
+    h4 {
+        font-size: 14px;
+    }
+    p {
+        font-size: 10px;
+    }
+}
 
 @include media-query($mediumscreen) {
     .masthead {
-        h3 { font-size: 55px; }
+    }
+    .banner {
+        padding: 15px;
+        h3 { 
+            font-size: 55px;
+            //line-height: 1.5; 
+        }
         .arrow { font-size: 65px; }
     }
     .i-button { 
         font-size: 25px;
         padding: 10px;
-        margin-top: 18px; 
+        //margin-top: 18px; 
+    }
+    .headline {
+        h4 {
+            font-size: 16px;
+        }
+        p {
+            font-size: 12px;
+        }
     }
 }
 /* .show {display:block;} necessary for js nav dropdown, included at _end.scss to ensure cascading */
 
 /* styles for highlights in packery */
 .grid {
-    margin-top: 25px;
+    //margin-top: 25px;
 }
 /* use grid-sizer and gutter-sizer to set columnWidth and gutter options, allows media queries to set the widths */
 .grid-sizer { width: 20%; }
