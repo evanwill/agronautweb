@@ -1,13 +1,11 @@
-.contentwrapper {
-   padding: 5px $content-padding-sm 20px;
-}
 .page {
     margin: 0 auto;
-    padding:6px;
+    padding: 0 $page-padding-sm $page-padding-sm;
     background-color:$white-back; 
     border-radius: 5px;
     box-shadow: $shadow-lg;
-    max-width: 1250px;
+    width: $content-width-sm;
+    max-width: $max-width;
     p { font-family: $content-font;}
 }
 .pageheader {
@@ -15,7 +13,7 @@
 }
 .columnwrapper {
     width: 98%;
-    margin: 5px auto;
+    margin: 0px auto;
     padding:0;
     display:block;
     @extend %clearfix;
@@ -83,7 +81,7 @@ a {
         }
     }
     .page {
-        padding: 15px 10px;
+        padding: 5px $page-padding-lg 15px;
     }
     .covers { 
         float:right;
@@ -100,8 +98,8 @@ a {
 }
 /* media for large screens */
 @include media-query($largescreen){ 
-    .contentwrapper {
-        padding: 15px $content-padding-lg 30px;
+    .page {
+        width: $content-width-lg;
     }
     .column2 {
         float:left;

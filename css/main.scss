@@ -26,8 +26,10 @@ $titleh-sm: 60px;
 $titleh-lg: 76px;
 $title-padding-sm: 3%;
 $title-padding-lg: 7%;
-$content-padding-sm: 3%;
-$content-padding-lg: 8%;
+$content-width-sm: 94%;
+$content-width-lg: 84%;
+$page-padding-sm: 6px;
+$page-padding-lg: 10px;
 
 $text-color:       #111;
 $background-color: #fdfdfd;
@@ -46,8 +48,8 @@ $white-back: #fff; // #FEFEFA #fbf6d9 #f9edd3 #fbf9e0
 $grey-color-light: lighten($c-grey, 40%);
 $grey-color-dark:  darken($c-grey, 25%);
 
-// Width of the content area
-$content-width:    800px;
+// Max-width of the content area
+$max-width:    1250px;
 
 $on-palm:          600px;
 $on-laptop:        800px;
