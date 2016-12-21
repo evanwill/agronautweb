@@ -1,5 +1,5 @@
 ---
-# Only the main Sass file needs front matter (the dashes are enough)
+# main css for all pages
 ---
 @charset "utf-8";
 
@@ -50,9 +50,6 @@ $grey-color-dark:  darken($c-grey, 25%);
 
 // Max-width of the content area
 $max-width:    1250px;
-
-$on-palm:          600px;
-$on-laptop:        800px;
 
 $mediumscreen:     740px; //600px
 $largescreen:      1024px; //820px

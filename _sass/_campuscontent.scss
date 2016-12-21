@@ -1,5 +1,5 @@
 .page {
-    margin: 0 auto;
+    margin: 0 auto 15px;
     padding: 0 $page-padding-sm $page-padding-sm;
     background-color:$white-back; 
     border-radius: 5px;
@@ -53,7 +53,7 @@
 }
 .intro { 
     margin-left: 2%;
-    p { margin: 10px 0; }
+    p { margin: 0 0 10px; }
     img { padding: 5%;}
 }
 blockquote {

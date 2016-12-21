@@ -29,6 +29,7 @@ function toggleHighlights(array) {
     };
 }
 /* get items and shuffle */ 
+/* make this a function, call on doc load and on refresh button */
 var items = document.getElementsByClassName("grid-item");
 var items_array = Array.prototype.slice.call(items); 
 
@@ -50,7 +51,7 @@ imagesLoaded( grid ).on( 'progress', function() {
 }); 
 
 /* add refresh button */
-document.getElementById("i-refresh").onclick = function () { shuffle(items_array);
+document.getElementById("i-refresh").onclick = function () { /* add toggle all off */ shuffle(items_array);
    toggleHighlights(items_array);
    pckry.layout();
   };
