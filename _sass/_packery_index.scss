@@ -76,6 +76,9 @@
 /* headline story */
 .headline {
     margin: 10px 0;
+    border: solid 1px $c-light-grey;
+    border-radius: 2px;
+    padding: 2px 3px;
     h4 {
         font-size: 14px;
     }
@@ -112,9 +115,6 @@
 /* .show {display:block;} necessary for js nav dropdown, included at _end.scss to ensure cascading */
 
 /* styles for highlights in packery */
-.grid {
-    //margin-top: 25px;
-}
 /* use grid-sizer and gutter-sizer to set columnWidth and gutter options, allows media queries to set the widths */
 .grid-sizer { width: 20%; }
 .gutter-sizer { width: 1%; }
@@ -174,8 +174,4 @@
         padding: 25px 0;
         top: 20%;
     }
-}
-/* media for large screens */
-@include media-query($largescreen){ 
-    
 }
