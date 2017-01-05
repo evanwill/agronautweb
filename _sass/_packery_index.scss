@@ -32,8 +32,10 @@
 }
 .i-button {
     cursor: pointer;
-    border: 1px solid black;
+    background-color: $c-blue;
+    color: $c-white;
     border-radius: 5px;
+    box-shadow:$shadow-sm;
     font-size: 14px;
     display:inline;
     padding: 5px;
@@ -100,10 +102,10 @@
     }
     .headline {
         h4 {
-            font-size: 16px;
+            font-size: 20px;
         }
         p {
-            font-size: 12px;
+            font-size: 16px;
         }
     }
 }

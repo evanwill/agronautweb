@@ -29,13 +29,15 @@ function toggleHighlights(array) {
     item.classList.toggle("show");
   };
 }
+
 /* get items and shuffle */ 
 /* make this a function, call on doc load and on refresh button */
 var items = document.getElementsByClassName("grid-item");
 var items_array = Array.prototype.slice.call(items); 
 
+/*
 shuffle(items_array);
-toggleHighlights(items_array); 
+toggleHighlights(items_array); */
 
 /* initialize packery 
 Packery, metafizzy, http://packery.metafizzy.co/ */
@@ -47,14 +49,31 @@ var pckry = new Packery( grid, {
 });
 /* wait for images to load before running layout 
 imagesLoaded, desandro, http://imagesloaded.desandro.com/ */
-
+/*
 imagesLoaded( grid ).on( 'progress', function() {
   pckry.layout();
-}); 
+}); */ 
+/* document.onload.reshuffle();*/
 
 /* add refresh button */
 document.getElementById("i-refresh").onclick = function () { 
   shuffle(items_array);
   toggleHighlights(items_array);
   pckry.layout();
-};
+  };
+
+  /* new */
+function yearsToggle() {
+    document.getElementById("yearsnav").style.display = ( document.getElementById("yearsnav").style.display == "block") ? "none" : "block";
+}
+
+function loadDoc() {
+  var highlights = new XMLHttpRequest();
+  highlights.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("demo").innerHTML = this.responseText;
+    }
+  };
+  xhttp.open("GET", "argo_highlights.xml", true);
+  xhttp.send();
+}
